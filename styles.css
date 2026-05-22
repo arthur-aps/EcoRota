@@ -823,7 +823,7 @@
   .page-contribuicao .check-label:has(input:checked) {
     border-color: var(--verde-claro);
     background: var(--branco);
-    color: var(--verde-escuro);
+    color: var(--verde-claro);
     font-weight: 600;
   }
 
