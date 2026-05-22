@@ -454,12 +454,12 @@
     margin-bottom: 1rem;
   }
 
-  .page-materiais .mat-header .bi { font-size: 2rem; line-height: 1; color: var(--verde); }
+  .page-materiais .mat-header .bi { font-size: 2rem; line-height: 1; color: var(--carvao); }
 
   .page-materiais .mat-nome {
     font-size: 1rem;
     font-weight: 700;
-    color: var(--verde);
+    color: var(--carvao);
   }
 
   .page-materiais .mat-secao {
