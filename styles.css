@@ -400,6 +400,11 @@
     .app { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
     .painel { max-height: 55vh; }
     #mapa { min-height: 300px; }
+
+    .cat-btn {
+      padding: 0.2rem;
+      gap: 0;
+    }
     
     .nav-link {
       font-size: 0.65rem;
