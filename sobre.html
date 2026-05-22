@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoRota — Sobre</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-sobre">
+
+<header>
+  <div class="logo">
+    EcoRota
+    <span>Praia Grande · SP</span>
+  </div>
+  <nav class="nav">
+    <a href="index.html" class="nav-link">Buscar</a>
+    <a href="ecopontos.html" class="nav-link">Ecopontos</a>
+    <a href="materiais.html" class="nav-link">Materiais</a>
+    <a href="sobre.html" class="nav-link ativo">Sobre</a>
+    <a href="contribuicao.html" class="nav-link">Contribuição</a>
+    <a class="nav-link toggle-dark-mode"><i class="bi bi-brightness-high"></i></a>
+  </nav>
+</header>
+
+<div class="page-layout">
+  <h1 class="page-title">Sobre o EcoRota</h1>
+  <p class="page-sub">A origem do projeto, a lógica por trás do sistema e o impacto que buscamos.</p>
+
+  <div class="secao">
+    <div class="secao-titulo">O problema que motivou tudo</div>
+    <p>Muitas pessoas desejam descartar corretamente pilhas, eletrônicos, remédios vencidos e outros resíduos especiais — mas não sabem onde fazer isso. A informação existe, porém está fragmentada: perdida em PDFs da prefeitura, espalhada em sites de fabricantes, ou simplesmente desconhecida.</p>
+    <p>O EcoRota resolve isso com uma pergunta simples: <strong>o que você quer descartar?</strong> A partir daí, o sistema exibe apenas os pontos de coleta que aceitam aquele material específico.</p>
+  </div>
+
+  <div class="secao">
+    <div class="secao-titulo">Como o sistema funciona</div>
+    <p>A lógica central é uma estrutura condicional: dependendo do material selecionado pelo usuário, o sistema filtra e exibe apenas os ecopontos relevantes. Em código, isso funciona assim:</p>
+    <div class="codigo-bloco">
+      <pre><span class="c-cinza">// O usuário clica em "Pilhas"</span>
+<span class="c-azul">function</span> <span class="c-verde">selecionarCategoria</span>(material) {
+
+  <span class="c-cinza">// SE o material for "pilhas"...</span>
+  <span class="c-laranja">if</span> (material === <span class="c-verde">"pilhas"</span>) {
+    <span class="c-cinza">// ...exibe os pontos A, B e C</span>
+    exibirPontos([pontoA, pontoB, pontoC]);
+
+  <span class="c-cinza">// SENÃO SE for "oleo"...</span>
+  } <span class="c-laranja">else if</span> (material === <span class="c-verde">"oleo"</span>) {
+    exibirPontos([pontoD, pontoE]);
+
+  <span class="c-cinza">// SENÃO, qualquer outro material</span>
+  } <span class="c-laranja">else</span> {
+    exibirPontos(filtrarPorMaterial(material));
+  }
+}</pre>
+    </div>
+    <p style="margin-top:0.75rem">Na prática, o EcoRota usa uma versão um pouco mais complexa desse mesmo princípio: cada ecoponto tem uma lista de materiais aceitos, e o filtro verifica qual ponto contém o material escolhido.</p>
+  </div>
+
+  <div class="secao">
+    <div class="secao-titulo">Impacto esperado</div>
+    <div class="impacto-grid">
+      <div class="impacto-item">
+        <div class="impacto-num">8</div>
+        <div class="impacto-label">categorias de resíduos já mapeadas</div>
+      </div>
+      <div class="impacto-item">
+        <div class="impacto-num">10</div>
+        <div class="impacto-label">ecopontos já cadastrados em Praia Grande</div>
+      </div>
+      <div class="impacto-item">
+        <div class="impacto-num"><i class="bi bi-infinity"></i></div>
+        <div class="impacto-label">cidades que podem adaptar o sistema</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="secao">
+    <div class="secao-titulo">Tecnologias utilizadas</div>
+    <p>O EcoRota foi construído com tecnologias abertas e gratuitas, sem dependência de serviços pagos.</p>
+    <div class="stack">
+      <span class="stack-item">HTML5</span>
+      <span class="stack-item">CSS3</span>
+      <span class="stack-item">JavaScript</span>
+      <span class="stack-item">Leaflet.js</span>
+      <span class="stack-item">OpenStreetMap</span>
+      <span class="stack-item">Google Fonts</span>
+      <span class="stack-item">Bootstrap Icons</span>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+// Modo escuro persistente
+if (localStorage.getItem('dark') === 'true') {
+  document.body.classList.add('dark');
+}
+
+document.querySelector('.toggle-dark-mode').addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  localStorage.setItem('dark', document.body.classList.contains('dark'));
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoRota — Contato</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="page-contribuicao">
+
+<header>
+  <div class="logo">
+    EcoRota
+    <span>Praia Grande · SP</span>
+  </div>
+  <nav class="nav">
+    <a href="index.html" class="nav-link">Buscar</a>
+    <a href="ecopontos.html" class="nav-link">Ecopontos</a>
+    <a href="materiais.html" class="nav-link">Materiais</a>
+    <a href="sobre.html" class="nav-link">Sobre</a>
+    <a href="contribuicao.html" class="nav-link ativo">Contribuição</a>
+    <a class="nav-link toggle-dark-mode"><i class="bi bi-brightness-high"></i></a>
+  </nav>
+</header>
+
+<div class="page-layout">
+  <h1 class="page-title">Contribua com dados!</h1>
+  <p class="page-sub">Conhece um ecoponto que não está no mapa? Encontrou uma informação desatualizada? Nos ajude a manter o EcoRota completo e confiável.</p>
+
+  <div class="form-card">
+
+    <div class="aviso">
+      As sugestões passam por verificação antes de aparecer no mapa. Agradecemos a contribuição!
+    </div>
+
+    <div id="formulario">
+      <div class="campo">
+        <label>Nome do ecoponto *</label>
+        <input type="text" id="nome" placeholder="Ex: Farmácia São João — Centro">
+      </div>
+
+      <div class="campo-row">
+        <div class="campo">
+          <label>Tipo de sugestão *</label>
+          <select id="tipo">
+            <option value="">Selecione...</option>
+            <option value="novo">Novo ecoponto</option>
+            <option value="correcao">Correção de dados</option>
+            <option value="encerrado">Ecoponto encerrado</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label>Bairro</label>
+          <input type="text" id="bairro" placeholder="Ex: Jardim Real">
+        </div>
+      </div>
+
+      <div class="campo">
+        <label>Endereço</label>
+        <input type="text" id="endereco" placeholder="Ex: Av. Presidente Kennedy, 1200">
+      </div>
+
+      <div class="campo-row">
+        <div class="campo">
+          <label>Horário de funcionamento</label>
+          <input type="text" id="horario" placeholder="Ex: Seg–Sex 8h–17h">
+        </div>
+        <div class="campo">
+          <label>Telefone</label>
+          <input type="text" id="telefone" placeholder="(13) 9xxxx-xxxx">
+        </div>
+      </div>
+
+      <div class="campo">
+        <label>Materiais aceitos</label>
+        <div class="checkgroup" id="checkMateriais"></div>
+      </div>
+
+      <div class="campo">
+        <label>Observações</label>
+        <textarea id="obs" placeholder="Qualquer informação adicional que possa ajudar..."></textarea>
+      </div>
+
+      <button class="btn-enviar" onclick="enviar()"><i class="bi bi-send"> </i>Enviar sugestão</button>
+    </div>
+
+    <div class="sucesso" id="sucesso">
+      <i class="bi bi-check-circle-fill"></i>
+      <h3>Sugestão recebida!</h3>
+      <p>Obrigado por contribuir com o EcoRota. Vamos verificar as informações e adicionar ao mapa em breve.</p>
+      <a href="index.html">← Voltar ao mapa</a>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+// Modo escuro persistente
+if (localStorage.getItem('dark') === 'true') {
+  document.body.classList.add('dark');
+}
+
+document.querySelector('.toggle-dark-mode').addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  localStorage.setItem('dark', document.body.classList.contains('dark'));
+});
+
+// Renderiza checkboxes de materiais dinamicamente
+function renderChecks() {
+  const container = document.getElementById('checkMateriais');
+  container.innerHTML = CATEGORIAS.map(cat => `
+    <label class="check-label">
+      <input type="checkbox" value="${cat.id}">
+      <i class="bi ${cat.emoji}"></i> ${cat.nome}
+    </label>
+  `).join('');
+}
+
+// Simulação de envio de dados (a ser substituída por integração real no futuro)
+function enviar() {
+  const nome = document.getElementById('nome').value.trim();
+  const tipo = document.getElementById('tipo').value;
+
+  if (!nome || !tipo) {
+    alert('Por favor, preencha pelo menos o nome e o tipo de sugestão.');
+    return;
+  }
+
+  // Por enquanto, só exibe o estado de sucesso
+  document.getElementById('formulario').style.display = 'none';
+  const sucesso = document.getElementById('sucesso');
+  sucesso.style.display = 'flex';
+}
+
+renderChecks();
+</script>
+</body>
+</html>

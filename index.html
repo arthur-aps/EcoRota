@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoRota — Descarte Consciente</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    EcoRota
+    <span>Praia Grande · SP</span>
+  </div>
+  <nav class="nav">
+    <a href="index.html" class="nav-link">Buscar</a>
+    <a href="ecopontos.html" class="nav-link">Ecopontos</a>
+    <a href="materiais.html" class="nav-link">Materiais</a>
+    <a href="sobre.html" class="nav-link">Sobre</a>
+    <a href="contribuicao.html" class="nav-link">Contribuição</a>
+    <a class="nav-link toggle-dark-mode"><i class="bi bi-brightness-high"></i></a>
+  </nav>
+</header>
+
+  <div class="app">
+
+    <!-- PAINEL LATERAL -->
+    <aside class="painel">
+      <div class="painel-top">
+        <h2>O que você quer descartar?</h2>
+        <p>Selecione o material e veja os pontos de coleta no mapa.</p>
+      </div>
+
+      <div class="categorias">
+        <div class="categorias-label">Categorias</div>
+        <div class="categorias-grid" id="categoriasGrid"></div>
+      </div>
+
+      <div class="resultados" id="resultados">
+        <div class="estado-vazio">
+          <i class="bi bi-globe-americas"></i>
+          <p>Selecione uma categoria acima para ver os ecopontos disponíveis.</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAPA -->
+    <main>
+      <div id="mapa"></div>
+    </main>
+
+  </div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</body>
+</html>
