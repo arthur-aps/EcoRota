@@ -400,6 +400,15 @@
     .app { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
     .painel { max-height: 55vh; }
     #mapa { min-height: 300px; }
+    
+    .nav-link {
+      font-size: 0.65rem;
+      padding: 0.3rem 0.5rem;
+    }
+
+    .logo {
+      font-size: 1rem;
+    }
   }
 
   /* PAGE MATERIAIS */
