@@ -511,7 +511,7 @@
     display: inline-block;
     margin-top: 1rem;
     background: var(--verde);
-    color: var(--branco);
+    color: var(--branco-q-n-muda);
     font-size: 0.78rem;
     font-weight: 600;
     padding: 0.45rem 1rem;
