@@ -389,6 +389,13 @@
     border: 1px solid var(--verde-claro);
   }
 
+  /* ZOOM IN E ZOOM OUT CUSTOMIZADOS */
+  .leaflet-control-zoom-in,
+  .leaflet-control-zoom-out {
+    background: var(--branco) !important;
+    color: var(--carvao) !important;
+  }
+
   /* SCROLLBAR */
   .resultados::-webkit-scrollbar { width: 4px; }
   .resultados::-webkit-scrollbar-track { background: transparent; }
