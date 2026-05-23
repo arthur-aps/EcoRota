@@ -392,7 +392,7 @@
   /* SCROLLBAR */
   .resultados::-webkit-scrollbar { width: 4px; }
   .resultados::-webkit-scrollbar-track { background: transparent; }
-  .resultados::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 4px; }
+  .resultados::-webkit-scrollbar-thumb { background: var(--verde); border-radius: 4px; }
 
   /* RESPONSIVO SIMPLES */
   @media (max-width: 768px) {
