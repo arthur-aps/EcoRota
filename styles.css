@@ -324,7 +324,7 @@
     align-items: center;
     gap: 0.4rem;
     background: var(--verde);
-    color: var(--branco);
+    color: var(--branco-q-n-muda);
     font-size: 0.72rem;
     font-weight: 600;
     padding: 3px 10px;
@@ -424,7 +424,7 @@
   }
 
   .page-materiais .page-title {
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Sans', sans-serif;
     font-size: 1.6rem;
     color: var(--carvao);
     margin-bottom: 0.4rem;
@@ -530,7 +530,7 @@
   }
 
   .page-sobre.page-title {
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Sans', sans-serif;
     font-size: 1.6rem;
     color: var(--verde);
     margin-bottom: 0.4rem;
@@ -645,7 +645,7 @@
   }
 
   .page-ecopontos .page-title {
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Sans', sans-serif;
     font-size: 1.6rem;
     color: var(--carvao);
     margin-bottom: 0.4rem;
@@ -740,7 +740,7 @@
   }
 
   .page-contribuicao .page-title {
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Sans', sans-serif;
     font-size: 1.6rem;
     color: var(--carvao);
     margin-bottom: 0.4rem;
