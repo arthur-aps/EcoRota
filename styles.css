@@ -597,6 +597,7 @@
     margin: 0;
   }
 
+  .page-sobre .c-vermelho { color: #e74c3c; }
   .page-sobre .c-verde  { color: #2ecc71; }
   .page-sobre .c-azul   { color: #74b9ff; }
   .page-sobre .c-laranja { color: #fdcb6e; }
