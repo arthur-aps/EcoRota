@@ -353,7 +353,12 @@
   }
 
   .popup-inner {
+    border-radius: 12px;
     padding: 1rem;
+    background: var(--branco);
+  }
+
+  .leaflet-popup-tip {
     background: var(--branco);
   }
 
